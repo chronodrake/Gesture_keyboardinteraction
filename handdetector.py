@@ -62,28 +62,28 @@ class Handinteraction():
                 way = self._getway()
                 return True,activate,self.cursor,way
             else:
-                print("找   不  到  你  的  手")
+              # print("找   不  到  你  的  手")
                 return True,None,None,None
         else:
-            print("摄像头未工作")
+           # print("摄像头未工作")
             return False,None,None,None
 
 
-handcontrol = Handinteraction()
-while True:
-    is_work,activate,cursor,way = handcontrol.update()
-    if is_work:
-        cv2.imshow("show",handcontrol.img)
-        print(activate,cursor,way)
-    else:
-        print("未有摄像头！")
-        break
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+# handcontrol = Handinteraction()
+# while True:
+#     is_work,activate,cursor,way = handcontrol.update()
+#     if is_work:
+#         cv2.imshow("show",handcontrol.img)
+#         print(activate,cursor,way)
+#     else:
+#         print("未有摄像头！")
+#         break
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
 
-# 释放资源
-cv2.destroyAllWindows()
-handcontrol.cap.release()
+# # 释放资源
+# cv2.destroyAllWindows()
+# handcontrol.cap.release()
 
 
 
